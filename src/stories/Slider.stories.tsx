@@ -3,6 +3,7 @@ import Slider, { type SliderItem } from "@/components/Slider";
 import House1 from '@/assets/images/house1.jpg'
 import House2 from '@/assets/images/house2.jpg'
 import House3 from '@/assets/images/house3.jpg'
+import PlayIcon from "@/components/Icons/Play";
 
 const meta: Meta<typeof Slider> = {
   title: "Components/Slider",
@@ -19,8 +20,10 @@ const demoItems: SliderItem[] = [
   {
     id: 1,
     imageUrl: House1,
-    badge: "6 Tickets",
-    badgeVariant: 'default'
+    badge: "For Rent",
+    badgeVariant: "blue",
+    badgeIcon: <PlayIcon size={14} />,
+    badgeOnClick: () => alert("Badge clicked!"),
   },
   {
     id: 2,

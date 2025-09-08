@@ -8,6 +8,8 @@ export type SliderItem = {
   imageUrl: string;
   badge?: string;
   badgeVariant?: BadgeVariant;
+  badgeIcon?: React.ReactNode;
+  badgeOnClick?: () => void;
 };
 
 export type SliderProps = {
@@ -61,7 +63,10 @@ export default function Slider({
 
         {items[index].badge && (
           <div className="absolute right-2 top-2">
-            <Badge variant={items[index].badgeVariant || "default"}>
+            <Badge variant={items[index].badgeVariant || "default"}
+              icon={items[index].badgeIcon}
+              onClick={items[index].badgeOnClick}
+            >
               {items[index].badge}
             </Badge>
           </div>

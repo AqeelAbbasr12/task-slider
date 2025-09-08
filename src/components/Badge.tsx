@@ -14,16 +14,19 @@ export type BadgeProps = {
   children: React.ReactNode;
   variant?: BadgeVariant;
   className?: string;
+  icon?: React.ReactNode;
+  onClick?: () => void;
 };
 
 export function Badge({
   children,
   variant = "default",
   className,
-
+  icon,
+  onClick,
 }: BadgeProps) {
   const base =
-    "inline-flex items-center gap-2 rounded-[8px] px-3 py-1 text-[12px] font-bold shadow shadow-sm";
+    "inline-flex items-center gap-1 rounded-[8px] px-3 py-1 text-[12px] font-bold shadow shadow-sm transition-colors";
 
   const colorStyles: Record<BadgeVariant, string> = {
     default: "bg-white text-black shadow",
@@ -35,8 +38,22 @@ export function Badge({
     red: "bg-red-100 text-red-500",
   };
 
+  const isClickable = !!onClick;
+
   return (
-    <span className={clsx(base, colorStyles[variant], className)}>
+    <span
+      onClick={onClick}
+      role={isClickable ? "button" : undefined}
+      tabIndex={isClickable ? 0 : undefined}
+      className={clsx(
+        base,
+        colorStyles[variant],
+        isClickable &&
+        "cursor-pointer hover:opacity-90 active:scale-95 focus:outline-none",
+        className
+      )}
+    >
+      {icon && <span className="flex-shrink-0">{icon}</span>}
       {children}
     </span>
   );
