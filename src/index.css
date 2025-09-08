@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.outer-box-shadow {
+  box-shadow: 0px 4px 8px 3px #00000026;
+}
+.slider-box-shadow {
+  box-shadow: 0px 4px 6px -1px #0000001a;
+}
