@@ -44,13 +44,13 @@ export default function Slider({
   return (
     <div
       className={clsx(
-        "relative flex items-center justify-center rounded-[4px] bg-white p-4 outer-box-shadow",
+        "relative flex items-center justify-center rounded-[8px] bg-white p-4 outer-box-shadow",
         className
       )}
     >
       <div
         className={clsx(
-          "relative overflow-hidden rounded-[4px] slider-box-shadow w-full",
+          "relative overflow-hidden rounded-[8px] slider-box-shadow w-full",
           aspect,
           max
         )}

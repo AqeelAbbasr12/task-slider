@@ -28,7 +28,7 @@ export function Badge({
   if (!showBadge) return null;
 
   const base =
-    "inline-flex items-center gap-1 rounded-[8px] px-3 py-1 text-[12px] font-bold shadow shadow-sm transition-colors";
+    "inline-flex items-center gap-1 rounded-[4px] px-3 py-1 text-[12px] font-bold shadow shadow-sm transition-colors";
 
   const colorStyles: Record<BadgeVariant, string> = {
     default: "bg-white text-black shadow",
