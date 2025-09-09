@@ -7,6 +7,7 @@ import PlayIcon from "@/components/Icons/Play";
 
 const meta: Meta<typeof Slider> = {
   title: "Components/Slider",
+  tags: ["autodocs"],
   component: Slider,
   parameters: {
     layout: "centered",
@@ -23,19 +24,20 @@ const demoItems: SliderItem[] = [
     badge: "For Rent",
     badgeVariant: "blue",
     badgeIcon: <PlayIcon size={14} />,
-    badgeOnClick: () => alert("Badge clicked!"),
   },
   {
     id: 2,
     imageUrl: House2,
     badge: "12 Tickets",
-    badgeVariant: 'default'
+    badgeVariant: 'default',
+    showBadge: false,
   },
   {
     id: 3,
     imageUrl: House3,
     badge: "3 Tickets",
-    badgeVariant: 'default'
+    badgeVariant: 'default',
+    showBadge: true,
   },
 ];
 

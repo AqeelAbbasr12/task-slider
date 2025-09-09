@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Badge } from "@/components/Badge";
 import PlayIcon from "@/components/Icons/Play";
 
@@ -6,9 +6,6 @@ const meta: Meta<typeof Badge> = {
   title: "Components/Pill",
   component: Badge,
   tags: ["autodocs"],
-  argTypes: {
-    onClick: { action: "clicked" },
-  },
 };
 export default meta;
 
@@ -36,11 +33,18 @@ export const WithoutIcon: Story = {
   },
 };
 
-export const Clickable: Story = {
+export const ColorOrange: Story = {
   args: {
-    children: "Clickable Badge",
+    children: "Color with icon",
     variant: "orange",
     icon: <PlayIcon size={16} />,
-    onClick: () => alert("Badge clicked!"),
+  },
+};
+
+export const HiddenBadge: Story = {
+  args: {
+    children: "Hidden Badge",
+    variant: "red",
+    showBadge: false,
   },
 };

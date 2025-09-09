@@ -9,7 +9,7 @@ export type SliderItem = {
   badge?: string;
   badgeVariant?: BadgeVariant;
   badgeIcon?: React.ReactNode;
-  badgeOnClick?: () => void;
+  showBadge?: boolean;
 };
 
 export type SliderProps = {
@@ -44,13 +44,13 @@ export default function Slider({
   return (
     <div
       className={clsx(
-        "relative flex items-center justify-center rounded-[8px] bg-white p-4 outer-box-shadow",
+        "relative flex items-center justify-center rounded-[4px] bg-white p-4 outer-box-shadow",
         className
       )}
     >
       <div
         className={clsx(
-          "relative overflow-hidden rounded-[8px] slider-box-shadow w-full",
+          "relative overflow-hidden rounded-[4px] slider-box-shadow w-full",
           aspect,
           max
         )}
@@ -61,11 +61,12 @@ export default function Slider({
           className="h-full w-full object-cover"
         />
 
-        {items[index].badge && (
+        {items[index].badge && items[index].showBadge !== false && (
           <div className="absolute right-2 top-2">
-            <Badge variant={items[index].badgeVariant || "default"}
+            <Badge
+              variant={items[index].badgeVariant || "default"}
               icon={items[index].badgeIcon}
-              onClick={items[index].badgeOnClick}
+              showBadge={items[index].showBadge}
             >
               {items[index].badge}
             </Badge>
@@ -83,7 +84,7 @@ export default function Slider({
             viewBox="0 0 33 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={`${isFirst ? "opacity-5" : ""}`}
+            className={`${isFirst ? "opacity-50" : ""}`}
           >
             <path
               fillRule="evenodd"
@@ -105,7 +106,7 @@ export default function Slider({
             viewBox="0 0 33 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={`${isLast ? "opacity-5" : ""}`}
+            className={`${isLast ? "opacity-50" : ""}`}
           >
             <path
               fillRule="evenodd"
