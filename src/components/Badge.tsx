@@ -31,13 +31,13 @@ export function Badge({
     "inline-flex items-center gap-1 rounded-[4px] px-3 py-1 text-[12px] font-bold shadow shadow-sm transition-colors";
 
   const colorStyles: Record<BadgeVariant, string> = {
-    default: "bg-white text-gray-900 shadow",
-    black: "bg-gray-900 text-white",
-    gray: "bg-gray-500 text-white",
-    green: "bg-green-50 text-green-500",
-    blue: "bg-blue-50 text-blue-500",
-    orange: "bg-orange-50 text-orange-500",
-    red: "bg-red-50 text-red-500",
+    default: "bg-white text-[#212121] shadow",
+    black: "bg-[#212121] text-white",
+    gray: "bg-[#F5F5F5] text-[#9E9E9E]",
+    green: "bg-[#E8F5E9] text-[#4CAF50]",
+    blue: "bg-[#E3F2FD] text-[#2196F3]",
+    orange: "bg-[#FFF3E0] text-[#FF9800]",
+    red: "bg-[#FFEBEE] text-[#F44336]",
   };
 
   return (
