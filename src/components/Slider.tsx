@@ -52,7 +52,8 @@ export default function Slider({
       className={clsx(
         "relative overflow-hidden rounded-[8px] slider-box-shadow w-full",
         aspect,
-        max
+        max,
+        className
       )}
     >
       <img
